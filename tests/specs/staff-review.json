@@ -1,0 +1,19 @@
+[
+  {
+    "name": "review inbox shows empty state",
+    "steps": [
+      {
+        "send": { "callback": "review:inbox" },
+        "expect": [
+          { "method": "answerCallbackQuery" },
+          {
+            "method": "editMessageText",
+            "payload": {
+              "text": "Inbox is empty — no products waiting for review."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
