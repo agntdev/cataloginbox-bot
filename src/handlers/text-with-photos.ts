@@ -48,8 +48,8 @@ composer.callbackQuery("submit:start", async (ctx) => {
   );
 });
 
-composer.on("message:text", async (ctx) => {
-  if (ctx.session.step !== "awaiting_product_text") return;
+composer.on("message:text", async (ctx, next) => {
+  if (ctx.session.step !== "awaiting_product_text") return next();
 
   ctx.session.step = undefined;
   const userId = ctx.from.id;

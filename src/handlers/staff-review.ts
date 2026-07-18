@@ -150,8 +150,8 @@ composer.callbackQuery(/^review:reject_skip:(.+)$/, async (ctx) => {
   );
 });
 
-composer.on("message:text", async (ctx) => {
-  if (ctx.session.step !== "awaiting_review_reason") return;
+composer.on("message:text", async (ctx, next) => {
+  if (ctx.session.step !== "awaiting_review_reason") return next();
 
   const productId = ctx.session.reviewProductId;
   if (!productId) {
