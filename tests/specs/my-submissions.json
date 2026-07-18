@@ -1,0 +1,20 @@
+[
+  {
+    "name": "/my_submissions",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "View recent product submissions and statuses"
+            }
+          }
+        ],
+        "send": {
+          "text": "/my_submissions"
+        }
+      }
+    ]
+  }
+]
